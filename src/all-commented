@@ -60,3 +60,41 @@ const Menus = (props) => {
     </article>
   );
 };
+
+const UseStateBasics = () => {
+  const [neww, setNeww] = React.useState(data);
+  const click = (id) => {
+    let newNeww = neww.filter((no) => no.id !== id);
+    const ll = setNeww(newNeww);
+  };
+  const click2 = () => {
+    setNeww([]);
+
+    //
+  };
+
+  return (
+    <>
+      {neww.map((no) => {
+        const { id, pic, name, job, info } = no;
+        // return console.log(no);
+        return (
+          <div key={id}>
+            {/* <h3>{id}</h3> */}
+            <img style={{ height: "100px" }} src={pic} />
+            <h3>{name}</h3>
+            <h4>{job}</h4>
+            <p>{info}</p>
+            <button onClick={() => click(id)} className="btn">
+              btn
+            </button>
+          </div>
+        );
+      })}
+      <button onClick={click2} className="btn">
+        all
+      </button>
+    </>
+  );
+};
+
