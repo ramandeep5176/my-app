@@ -1,7 +1,5 @@
 //
-import reactDom from "react-dom";
-import "./index.css";
-import { menu } from "./test";
+
 //
 
 // import Data from "./test.js";
@@ -40,27 +38,25 @@ function Menu() {
   );
 }
 
-// function MenuList() {
-//   return (
-//     <section>
-//       {menu.map((menus) => {
-//         return <Menus></Menus>;
-//       })}
-//     </section>
-//   );
-// }
+function MenuList() {
+  return (
+    <section>
+      {menu.map((menus) => {
+        return <Menus></Menus>;
+      })}
+    </section>
+  );
+}
 
-// const Menus = (props) => {
-//   const { title,category, price, img, desc } = props.menus;
-//   return (
-//     <article className="container">
-//       <h2 className="h2">{title}</h2>
-//       <p className="p">{category}</p>
-//       <p className="p">{price}</p>
-//       <img src={img} />
-//       <p>{desc}</p>
-//     </article>
-//   );
-// };
-
-reactDom.render(<MenuList />, document.getElementById("root"));
+const Menus = (props) => {
+  const { title, category, price, img, desc } = props.menus;
+  return (
+    <article className="container">
+      <h2 className="h2">{title}</h2>
+      <p className="p">{category}</p>
+      <p className="p">{price}</p>
+      <img src={img} />
+      <p>{desc}</p>
+    </article>
+  );
+};
